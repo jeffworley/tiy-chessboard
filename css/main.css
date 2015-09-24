@@ -95,21 +95,38 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+ .chessboard {
+   border: 3px solid tan;
+   margin: 1em;
+ }
 
+ .chessboard th {
+   border-right: 1px solid grey;
+   border-bottom: 1px solid grey;
+   padding-right: 0.5em;
+   padding-left: 0.5em;
+ }
 
+ .chessboard td {
+   padding-right: 0.5em;
+   padding-left: 0.5em;
+ }
 
+ .white {
+   background-color: white;
+   width: 4em;
+   height: 5em;
+ }
 
+ .black {
+   background-color: black;
+   width: 4em;
+   height: 5em;
+ }
 
-
-
-
-
-
-
-
-
-
-
+ .btn {
+   width: auto;
+ }
 
 /* ==========================================================================
    Helper classes
