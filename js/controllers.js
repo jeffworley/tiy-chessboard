@@ -1,5 +1,4 @@
 console.log("Loaded controllers.js");
-
 (function(globals){ // What is this even? Do I need it?
   /**
    * Your pattern for Controller code:
