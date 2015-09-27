@@ -20,8 +20,9 @@ console.log("Loaded controllers.js");
 
 
   // Controller for "next move"...
-  jQuery(/* your "next move" button */).on('click', function(event){
+  jQuery("#step-forward").on('click', function(event){
     // TODO: Fire tracer bullet!
+    console.log("clicked the step-forward button!!!")
     // TODO: Tell the Model -- `game` -- to advance to the next move...
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
   });
