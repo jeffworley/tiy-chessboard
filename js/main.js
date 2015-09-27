@@ -1,3 +1,4 @@
+console.log("Loaded main.js");
 (function(globals){
 // Don't worry if that seems a little funky...
 
@@ -19,11 +20,14 @@
    * @var {Array} of...?
    */
   var moves = [
+
     // TODO: Fill me in!
   ]; // END moves
 
+  // Created var to keep track of moves
+  var
   // var current; TODO: do we need this?
-
+  var catalanMove = [];
   // You don't need to understand `globals` yet...
   var game = globals.game = {
     /**
