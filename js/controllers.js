@@ -28,15 +28,17 @@ console.log("Loaded controllers.js");
   });
 
   // Controller for "previous move"...
-  jQuery(/* your "previous move" button */).on('click', function(event){
+  jQuery("#step-back").on('click', function(event){
     // TODO: Fire tracer bullet!
+    console.log("clicked the step-back button!!!")
     // TODO: Tell the Model -- `game` -- to advance to the previous move...
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
   });
 
   // Controller for "fast-forward"...
-  jQuery(/* your "fast-forward" button */).on(/* wat? */, function(event){
+  jQuery("fast-forward").on('click', function(event){
     // TODO: Fire tracer bullet!
+    console.log("clicked the fast-forward button!!!")
     // TODO: Tell the Model -- `game` -- to advance to the last move...
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
   });
