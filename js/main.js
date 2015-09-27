@@ -20,12 +20,20 @@ console.log("Loaded main.js");
    * @var {Array} of...?
    */
   var moves = [
-
+    [g4, e4],
+    [a7, c6],
+    [g3, e3],
+    [b5, c5],
+    [g7, f7],
+    [b4, d4],
+    [h6, g7],
+    [a6, b5],
+    [h7, f6]
     // TODO: Fill me in!
   ]; // END moves
 
   // Created var to keep track of moves
-  var
+  var cmCounter = 0;
   // var current; TODO: do we need this?
   var catalanMove = [];
   // You don't need to understand `globals` yet...
@@ -58,6 +66,15 @@ console.log("Loaded main.js");
      */
     next: function(){
       // Doesn't this seem to be missing something?
+      if (cmCounter > moves.length) {
+        console.log("No more moves in the Catalan Opening: Closed Variation!");
+      } else if (cmCounter < moves.length) {
+        cmCounter = cmCounter + 1;
+        
+      }
+
+
+
       return this;
     },
     /**

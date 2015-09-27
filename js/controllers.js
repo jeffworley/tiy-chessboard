@@ -24,6 +24,7 @@ console.log("Loaded controllers.js");
     // TODO: Fire tracer bullet!
     console.log("clicked the step-forward button!!!")
     // TODO: Tell the Model -- `game` -- to advance to the next move...
+    game.next();
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
   });
 
@@ -32,21 +33,25 @@ console.log("Loaded controllers.js");
     // TODO: Fire tracer bullet!
     console.log("clicked the step-back button!!!")
     // TODO: Tell the Model -- `game` -- to advance to the previous move...
+    game.prev();
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
   });
 
   // Controller for "fast-forward"...
-  jQuery("fast-forward").on('click', function(event){
+  jQuery("#fast-forward").on('click', function(event){
     // TODO: Fire tracer bullet!
     console.log("clicked the fast-forward button!!!")
     // TODO: Tell the Model -- `game` -- to advance to the last move...
+    game.end();
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
   });
 
   // Controller for anything else...
-  jQuery(/* any other buttons out there? */).on(/* dunno */, function(event){
+  jQuery("#reset").on('click', function(event){
     // TODO: Fire tracer bullet!
+    console.log("clicked the reset button!!!")
     // TODO: Tell the Model -- `game` -- to do something it knows how to do...
+    game.reset();
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
   });
 
