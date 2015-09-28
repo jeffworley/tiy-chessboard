@@ -1,143 +1,1121 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Let's Play Chess</title>
+        <title>Catalan Opening: Closed Variation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <!-- <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css"> -->
         <link rel="stylesheet" href="css/chessboard-styles.css">
+        <link rel="stylesheet" href="css/font-awesome-4.4.0/css/font-awesome.min.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <!-- <script src="js/main.js"></script> -->
+        <script src="js/controllers.js"></script>"
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <div id="boardState-0">
         <table class="chessboard">
-          <caption><h1>Let's Play Chess</h1></caption>
+          <caption><h1>Catalan Opening: Closed Variation</h1></caption>
           <thead>
             <tr>
               <th>Markers</th>
-              <th>Column 1</th>
-              <th>Column 2</th>
-              <th>Column 3</th>
-              <th>Column 4</th>
-              <th>Column 5</th>
-              <th>Column 6</th>
-              <th>Column 7</th>
-              <th>Column 8</th>
+              <th>A</th>
+              <th>B</th>
+              <th>C</th>
+              <th>D</th>
+              <th>E</th>
+              <th>F</th>
+              <th>G</th>
+              <th>H</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th>Row A</th>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
+              <th>8</th>
+                <td>BR</td>
+                <td>BN</td>
+                <td>BB</td>
+                <td>BQ</td>
+                <td>BK</td>
+                <td>BB</td>
+                <td>BN</td>
+                <td>BR</td>
             </tr>
             <tr>
-              <th>Row B</th>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
+              <th>7</th>
+                <td>BP</td>
+                <td>BP</td>
+                <td>BP</td>
+                <td>BP</td>
+                <td>BP</td>
+                <td>BP</td>
+                <td>BP</td>
+                <td>BP</td>
             </tr>
             <tr>
-              <th>Row C</th>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
+              <th>6</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-              <th>Row D</th>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
+              <th>5</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-              <th>Row E</th>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
+              <th>4</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-              <th>Row F</th>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
+              <th>3</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-              <th>Row G</th>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
+              <th>2</th>
+                <td>WP</td>
+                <td>WP</td>
+                <td>WP</td>
+                <td>WP</td>
+                <td>WP</td>
+                <td>WP</td>
+                <td>WP</td>
+                <td>WP</td>
             </tr>
             <tr>
-              <th>Row H</th>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
-                <td class="black"></td>
-                <td class="white"></td>
+              <th>1</th>
+                <td>WR</td>
+                <td>WN</td>
+                <td>WB</td>
+                <td>WQ</td>
+                <td>WK</td>
+                <td>WB</td>
+                <td>WN</td>
+                <td>WR</td>
             </tr>
           </tbody>
         </table>
+        </div>
+        <div id="boardState-1" class="notCurMove">
+        <table class="chessboard">
+          <caption><h1>Catalan Opening: Closed Variation</h1></caption>
+          <thead>
+            <tr>
+              <th>Markers</th>
+              <th>A</th>
+              <th>B</th>
+              <th>C</th>
+              <th>D</th>
+              <th>E</th>
+              <th>F</th>
+              <th>G</th>
+              <th>H</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>8</th>
+                <td>BR</td>
+                <td>BN</td>
+                <td>BB</td>
+                <td>BQ</td>
+                <td>BK</td>
+                <td>BB</td>
+                <td>BN</td>
+                <td>BR</td>
+            </tr>
+            <tr>
+              <th>7</th>
+                <td>BP</td>
+                <td>BP</td>
+                <td>BP</td>
+                <td>BP</td>
+                <td>BP</td>
+                <td>BP</td>
+                <td>BP</td>
+                <td>BP</td>
+            </tr>
+            <tr>
+              <th>6</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+              <th>5</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+              <th>4</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>WP</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+              <th>3</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+              <th>2</th>
+                <td>WP</td>
+                <td>WP</td>
+                <td>WP</td>
+                <td></td>
+                <td>WP</td>
+                <td>WP</td>
+                <td>WP</td>
+                <td>WP</td>
+            </tr>
+            <tr>
+              <th>1</th>
+                <td>WR</td>
+                <td>WN</td>
+                <td>WB</td>
+                <td>WQ</td>
+                <td>WK</td>
+                <td>WB</td>
+                <td>WN</td>
+                <td>WR</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="boardState-2" class="notCurMove">
+      <table class="chessboard">
+        <caption><h1>Catalan Opening: Closed Variation</h1></caption>
+        <thead>
+          <tr>
+            <th>Markers</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+            <th>G</th>
+            <th>H</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>8</th>
+              <td>BR</td>
+              <td>BN</td>
+              <td>BB</td>
+              <td>BQ</td>
+              <td>BK</td>
+              <td>BB</td>
+              <td></td>
+              <td>BR</td>
+          </tr>
+          <tr>
+            <th>7</th>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+          </tr>
+          <tr>
+            <th>6</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>BN</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>5</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>4</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>3</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>2</th>
+              <td>WP</td>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td>WP</td>
+              <td>WP</td>
+              <td>WP</td>
+              <td>WP</td>
+          </tr>
+          <tr>
+            <th>1</th>
+              <td>WR</td>
+              <td>WN</td>
+              <td>WB</td>
+              <td>WQ</td>
+              <td>WK</td>
+              <td>WB</td>
+              <td>WN</td>
+              <td>WR</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div id="boardState-3" class="notCurMove">
+      <table class="chessboard">
+        <caption><h1>Catalan Opening: Closed Variation</h1></caption>
+        <thead>
+          <tr>
+            <th>Markers</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+            <th>G</th>
+            <th>H</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>8</th>
+              <td>BR</td>
+              <td>BN</td>
+              <td>BB</td>
+              <td>BQ</td>
+              <td>BK</td>
+              <td>BB</td>
+              <td></td>
+              <td>BR</td>
+          </tr>
+          <tr>
+            <th>7</th>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+          </tr>
+          <tr>
+            <th>6</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>BN</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>5</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>4</th>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>3</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>2</th>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td>WP</td>
+              <td>WP</td>
+              <td>WP</td>
+          </tr>
+          <tr>
+            <th>1</th>
+              <td>WR</td>
+              <td>WN</td>
+              <td>WB</td>
+              <td>WQ</td>
+              <td>WK</td>
+              <td>WB</td>
+              <td>WN</td>
+              <td>WR</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div id="boardState-4" class="notCurMove">
+      <table class="chessboard">
+        <caption><h1>Catalan Opening: Closed Variation</h1></caption>
+        <thead>
+          <tr>
+            <th>Markers</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+            <th>G</th>
+            <th>H</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>8</th>
+              <td>BR</td>
+              <td>BN</td>
+              <td>BB</td>
+              <td>BQ</td>
+              <td>BK</td>
+              <td>BB</td>
+              <td></td>
+              <td>BR</td>
+          </tr>
+          <tr>
+            <th>7</th>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td></td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+          </tr>
+          <tr>
+            <th>6</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>BP</td>
+              <td>BN</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>5</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>4</th>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>3</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>2</th>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td>WP</td>
+              <td>WP</td>
+              <td>WP</td>
+          </tr>
+          <tr>
+            <th>1</th>
+              <td>WR</td>
+              <td>WN</td>
+              <td>WB</td>
+              <td>WQ</td>
+              <td>WK</td>
+              <td>WB</td>
+              <td>WN</td>
+              <td>WR</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div id="boardState-5" class="notCurMove">
+      <table class="chessboard">
+        <caption><h1>Catalan Opening: Closed Variation</h1></caption>
+        <thead>
+          <tr>
+            <th>Markers</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+            <th>G</th>
+            <th>H</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>8</th>
+              <td>BR</td>
+              <td>BN</td>
+              <td>BB</td>
+              <td>BQ</td>
+              <td>BK</td>
+              <td>BB</td>
+              <td></td>
+              <td>BR</td>
+          </tr>
+          <tr>
+            <th>7</th>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td></td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+          </tr>
+          <tr>
+            <th>6</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>BP</td>
+              <td>BN</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>5</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>4</th>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>3</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>2</th>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td>WP</td>
+          </tr>
+          <tr>
+            <th>1</th>
+              <td>WR</td>
+              <td>WN</td>
+              <td>WB</td>
+              <td>WQ</td>
+              <td>WK</td>
+              <td>WB</td>
+              <td>WN</td>
+              <td>WR</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div id="boardState-6" class="notCurMove">
+      <table class="chessboard">
+        <caption><h1>Catalan Opening: Closed Variation</h1></caption>
+        <thead>
+          <tr>
+            <th>Markers</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+            <th>G</th>
+            <th>H</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>8</th>
+              <td>BR</td>
+              <td>BN</td>
+              <td>BB</td>
+              <td>BQ</td>
+              <td>BK</td>
+              <td>BB</td>
+              <td></td>
+              <td>BR</td>
+          </tr>
+          <tr>
+            <th>7</th>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td></td>
+              <td></td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+          </tr>
+          <tr>
+            <th>6</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>BP</td>
+              <td>BN</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>5</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>BP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>4</th>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>3</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>2</th>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td>WP</td>
+          </tr>
+          <tr>
+            <th>1</th>
+              <td>WR</td>
+              <td>WN</td>
+              <td>WB</td>
+              <td>WQ</td>
+              <td>WK</td>
+              <td>WB</td>
+              <td>WN</td>
+              <td>WR</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div id="boardState-7" class="notCurMove">
+      <table class="chessboard">
+        <caption><h1>Catalan Opening: Closed Variation</h1></caption>
+        <thead>
+          <tr>
+            <th>Markers</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+            <th>G</th>
+            <th>H</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>8</th>
+              <td>BR</td>
+              <td>BN</td>
+              <td>BB</td>
+              <td>BQ</td>
+              <td>BK</td>
+              <td>BB</td>
+              <td></td>
+              <td>BR</td>
+          </tr>
+          <tr>
+            <th>7</th>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td></td>
+              <td></td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+          </tr>
+          <tr>
+            <th>6</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>BP</td>
+              <td>BN</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>5</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>BP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>4</th>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>3</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>2</th>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td>WP</td>
+              <td>WB</td>
+              <td>WP</td>
+          </tr>
+          <tr>
+            <th>1</th>
+              <td>WR</td>
+              <td>WN</td>
+              <td>WB</td>
+              <td>WQ</td>
+              <td>WK</td>
+              <td></td>
+              <td>WN</td>
+              <td>WR</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div id="boardState-8" class="notCurMove">
+      <table class="chessboard">
+        <caption><h1>Catalan Opening: Closed Variation</h1></caption>
+        <thead>
+          <tr>
+            <th>Markers</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+            <th>G</th>
+            <th>H</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>8</th>
+              <td>BR</td>
+              <td>BN</td>
+              <td>BB</td>
+              <td>BQ</td>
+              <td>BK</td>
+              <td></td>
+              <td></td>
+              <td>BR</td>
+          </tr>
+          <tr>
+            <th>7</th>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td></td>
+              <td>BB</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+          </tr>
+          <tr>
+            <th>6</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>BP</td>
+              <td>BN</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>5</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>BP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>4</th>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>3</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>2</th>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td>WP</td>
+              <td>WB</td>
+              <td>WP</td>
+          </tr>
+          <tr>
+            <th>1</th>
+              <td>WR</td>
+              <td>WN</td>
+              <td>WB</td>
+              <td>WQ</td>
+              <td>WK</td>
+              <td></td>
+              <td>WN</td>
+              <td>WR</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div id="boardState-9" class="notCurMove">
+      <table class="chessboard">
+        <caption><h1>Catalan Opening: Closed Variation</h1></caption>
+        <thead>
+          <tr>
+            <th>Markers</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+            <th>G</th>
+            <th>H</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>8</th>
+              <td>BR</td>
+              <td>BN</td>
+              <td>BB</td>
+              <td>BQ</td>
+              <td>BK</td>
+              <td></td>
+              <td></td>
+              <td>BR</td>
+          </tr>
+          <tr>
+            <th>7</th>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td></td>
+              <td>BB</td>
+              <td>BP</td>
+              <td>BP</td>
+              <td>BP</td>
+          </tr>
+          <tr>
+            <th>6</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>BP</td>
+              <td>BN</td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>5</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>BP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>4</th>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>3</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>WN</td>
+              <td>WP</td>
+              <td></td>
+          </tr>
+          <tr>
+            <th>2</th>
+              <td>WP</td>
+              <td>WP</td>
+              <td></td>
+              <td></td>
+              <td>WP</td>
+              <td>WP</td>
+              <td>WB</td>
+              <td>WP</td>
+          </tr>
+          <tr>
+            <th>1</th>
+              <td>WR</td>
+              <td>WN</td>
+              <td>WB</td>
+              <td>WQ</td>
+              <td>WK</td>
+              <td></td>
+              <td></td>
+              <td>WR</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="btns">
         <button class="btn" id="rewind" type="button">Rewind</button>
         <button class="btn" id="step-back" type="button">Step Back</button>
         <button class="btn" id="play-pause" type="button">Play/Pause</button>
         <button class="btn" id="step-forward" type="button">Step Forward</button>
         <button class="btn" id="fast-forward" type="button">Fast Forward</button>
+      </div>
 
-        <!-- Add your site or application content here -->
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/controllers.js"></script>
+        <!-- <script src="js/main.js"></script> -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

@@ -1,6 +1,13 @@
+body {
+  box-sizing: border-box;
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+  color: lightgrey;
+}
+
 .chessboard {
   border: 3px solid tan;
-  margin: 1em;
 }
 
 .chessboard th {
@@ -15,18 +22,39 @@
   padding-left: 0.5em;
 }
 
-.white {
-  background-color: white;
-  width: 4em;
+table tr:nth-child(odd) td:nth-child(odd)  {
+  background-color: black;
+  width: 5em;
   height: 5em;
 }
 
-.black {
-  background-color: black;
-  width: 4em;
+table tr:nth-child(odd) td:nth-child(even) {
+  background-color: white;
+  width: 5em;
   height: 5em;
+}
+
+table tr:nth-child(even) td:nth-child(even) {
+  background-color: black;
+  width: 5em;
+  height: 5em;
+}
+
+table tr:nth-child(even) td:nth-child(odd) {
+  background-color: white;
+  width: 5em;
+  height: 5em;
+}
+
+.btns {
+  text-align: center;
 }
 
 .btn {
   width: auto;
+  margin: auto;
+}
+
+.notCurMove {
+  display: none;
 }
