@@ -10,7 +10,7 @@ console.log("Loaded controllers.js");
    * 3. What `CALLBACK` should be run when the interaction happens?
    * 4. What should my `CALLBACK` do with it's `EVENT`...?
    */
-  document.querySelector(SELECTOR)
+  /*document.querySelector(SELECTOR)
     .addEventListener(TYPE, CALLBACK);
   // AKA
   jQuery(SELECTOR).on(TYPE, CALLBACK);
@@ -18,7 +18,7 @@ console.log("Loaded controllers.js");
   function CALLBACK (EVENT){
     // Do something with Models and Views...
     // Maybe do something with EVENT...?
-  }
+  }*/
 
   var cmCounter = 0;
   var totalBoardStates = 9;
@@ -87,7 +87,7 @@ console.log("Loaded controllers.js");
   });
 
   // Controller for anything else...
-  jQuery("#reset").on('click', function(event){
+  jQuery("#rewind").on('click', function(event){
     // TODO: Fire tracer bullet!
     console.log("clicked the reset button!!!")
     // TODO: Tell the Model -- `game` -- to do something it knows how to do...

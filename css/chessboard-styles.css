@@ -3,6 +3,7 @@ body {
   display: block;
   width: 95%;
   margin: 0 auto;
+  color: lightgrey;
 }
 
 .chessboard {
@@ -46,10 +47,14 @@ table tr:nth-child(even) td:nth-child(odd) {
 }
 
 .btns {
-  background-color: pink;
+  text-align: center;
 }
 
 .btn {
   width: auto;
   margin: auto;
+}
+
+.notCurMove {
+  display: none;
 }
