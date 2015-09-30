@@ -95,38 +95,51 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+   body {
+     display: block;
+     margin: 0 10%;
+   }
+
  .chessboard {
    border: 3px solid tan;
-   margin: 1em;
- }
-
- .chessboard th {
-   border-right: 1px solid grey;
-   border-bottom: 1px solid grey;
-   padding-right: 0.5em;
-   padding-left: 0.5em;
+   width: 100%;
  }
 
  .chessboard td {
-   padding-right: 0.5em;
-   padding-left: 0.5em;
- }
-
- .white {
-   background-color: white;
-   width: 4em;
-   height: 5em;
- }
-
- .black {
-   background-color: black;
-   width: 4em;
-   height: 5em;
+   padding-bottom: 10%;
  }
 
  .btn {
    width: auto;
  }
+
+// Set chesspiece images to position absolute so that it will show up on the chessboard but not in the chessboard.
+
+// Example of positioning a piece
+/*
+ * .black.queen::before {
+ *   content: 'Q';
+ *   position: absolute;
+ *   font-size: 2em;
+ *   top: 0;
+ *   right: 0;
+ *   bottom: 0;
+ *   left: 0;
+ * }
+ */
+
+// May be better to just refactor and say...
+/* .chessboard td::before {
+ *   text-align: center;
+ *   font-size: 2em;
+ *   position: absolute;
+ *   font-size: 2em;
+ *   top: 0;
+ *   right: 0;
+ *   bottom: 0;
+ *   left: 0;
+ * }
+ */
 
 /* ==========================================================================
    Helper classes

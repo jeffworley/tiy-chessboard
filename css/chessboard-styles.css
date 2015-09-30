@@ -8,6 +8,7 @@ body {
 
 .chessboard {
   border: 3px solid tan;
+  width: 100%;
 }
 
 .chessboard th {
