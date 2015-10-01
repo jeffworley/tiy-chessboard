@@ -5,8 +5,8 @@
   "main": "index.html",
   "scripts": {
     "test": "browser-sync start --server --startPath tests.html --files='js/*.js'",
-    "start" : "browser-sync start --server --startPath='cb-index.html' --files='cb-index.html, css/*.css, js/*.js'",
-    "sass" : "node-sass --output css/ scss/main.scss",
+    "start": "browser-sync start --server --startPath='cb-index.html' --files='cb-index.html, css/*.css, js/*.js'",
+    "sass": "node-sass --output css/ scss/main.scss",
     "sass:watch": "npm run sass -- --watch"
   },
   "repository": {
