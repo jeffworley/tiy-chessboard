@@ -143,7 +143,7 @@
         game.next();
       } while (cmCounter < moves.length);
 
-      alert("That's all folks!!!");
+      //alert("That's all folks!!!");
 
       return this;
     },
