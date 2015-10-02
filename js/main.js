@@ -77,6 +77,9 @@
      */
     next: function(){
       // Doesn't this seem to be missing something?
+
+      game.applyMove(6, 3, 4, 3);
+
       return this;
     },
     /**

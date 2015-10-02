@@ -29,42 +29,6 @@
       chai.expect(game.reset()).to.be.an('array');
     });
 
-    it('should have the applyMove function', function(){
-      //chai.expect(game.applyMove()).to.be.a('function');
-
-      // Pre conditions...
-      game.reset(); // Re-initialize the board
-      var board = game.board();
-      expect(board[6][3]).to.be.equal('p');
-      expect(board[4][3]).to.be.null;
-
-      // Action to change the world...
-      // game.applyMove(
-      //   {from: {rank: 6, file: 3},
-      //   to: {rank: 4, file: 3}
-      // });
-      game.applyMove(6, 3, 4, 3);
-
-      // Post conditions...
-      var board = game.board();
-      expect(board[6][3]).to.be.null;
-      expect(board[4][3]).to.be.equal('p');
-
-      game.reset(); // Re-initialize the board
-      var board = game.board();
-      expect(board[0][6]).to.be.equal('N');
-      expect(board[2][5]).to.be.null;
-
-      // Action to change the world...
-      game.applyMove(0, 6, 2, 5);
-
-      // Post consitions...
-      var board = game.board();
-      expect(board[0][6]).to.be.null;
-      expect(board[2][5]).to.be.equal('N');
-
-    });
-
     it.skip('should tell me what piece is at a position', function(){
       expect(game.pieceAt(6,3)).to.equal('p');
       expect(game.pieceAt(6,2)).to.equal('p');
@@ -119,29 +83,57 @@
 
     });
 
-    it('should be able to move a different piece', function(){
-      // Initialize the Environment...
-      game.reset();
-      var board = game.board(); // Copy the board...
+    it.skip('should have the applyMove function', function(){
+      //chai.expect(game.applyMove()).to.be.a('function');
 
-      // Test the Preconditions...
-
+      // Pre conditions...
+      game.reset(); // Re-initialize the board
+      var board = game.board();
+      expect(board[6][3]).to.be.equal('p');
+      expect(board[4][3]).to.be.null;
 
       // Action to change the world...
+      // game.applyMove(
+      //   {from: {rank: 6, file: 3},
+      //   to: {rank: 4, file: 3}
+      // });
+      game.applyMove(6, 3, 4, 3);
 
+      // Post conditions...
+      var board = game.board();
+      expect(board[6][3]).to.be.null;
+      expect(board[4][3]).to.be.equal('p');
 
-      var board = game.board(); // Re-copy the board...
+      game.reset(); // Re-initialize the board
+      var board = game.board();
+      expect(board[0][6]).to.be.equal('N');
+      expect(board[2][5]).to.be.null;
 
-      // Test the Postconditions...
+      // Action to change the world...
+      game.applyMove(0, 6, 2, 5);
 
+      // Post consitions...
+      var board = game.board();
+      expect(board[0][6]).to.be.null;
+      expect(board[2][5]).to.be.equal('N');
 
-    })
+    });
 
-    it.skip('should be able to advance to the next move', function(){
+    it('should be able to advance to the next move', function(){
       // TODO: Maybe I should write some tests for this?
-      chai.expect(game.applyMove(Move[1])).to.be.equal({from: {rank: 0, file: 6}, to: {rank: 2, file: 5}}); // To confirm that applyMove is correctly moving through the Move array of dictionaries.
-      chai.expect(game.next()).to.be.equal(Move[1]); // To confirm that when game.next is invoked it is equal to the next index within the Move array of dictionaries.
-      // TODO: Figure out how to replace the [1] sub-index in the above Move array with a variable that changes as you iterate through the array. Maybe ++?
+      // Pre conditions...
+      game.reset(); // Re-initialize the board
+      var board = game.board();
+      expect(board[6][3]).to.be.equal('p');
+      expect(board[4][3]).to.be.null;
+
+      // Action to change the world...
+      game.next();
+
+      // Post conditions...
+      var board = game.board();
+      expect(board[6][3]).to.be.null;
+      expect(board[4][3]).to.be.equal('p');
     });
 
     it.skip('should be able to step back to the prev move', function(){
