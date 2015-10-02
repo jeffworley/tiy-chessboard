@@ -67,7 +67,7 @@
     reset: function(){
       board = initial();
 
-      return this;
+      return this; // "this" in the context of a function, refers to the object to which the function belongs.  In this case "this" refers to the object which reset belongs and it belongs to the game object.
     },
     /**
      * Advance the internal game board to the next move.
@@ -111,7 +111,7 @@
       for ( var rank = 0; rank < board.length; rank++ ){
         bullet += '|';
         for ( var file = 0; file < board[rank].length; file++ ){
-          bullet += board[rank][file] || ' |';
+          bullet += (board[rank][file] || ' ') + '|';
         }
         bullet += '\n';
       }
@@ -130,6 +130,11 @@
      */
     applyMove: function(from, to){
       // You should write something in here...
+      // TODO: Apply the move 'from', 'to' to 'board'
+      board[4][3] = board[6][3];
+      board[6][3] = null;
+
+
     } // END applyMove
   }; // END game
 
