@@ -90,7 +90,7 @@
 
     });
 
-    it('should be able to advance to the next move', function(){
+    it.skip('should be able to advance to the next move', function(){
       // TODO: Maybe I should write some tests for this?
       // First Move
       // Pre conditions...
@@ -122,7 +122,7 @@
       expect(board[2][5]).to.be.equal('N');
     });
 
-    it('should be able to step back to the prev move', function(){
+    it.skip('should be able to step back to the prev move', function(){
       //Turn back second move...
       // Pre conditions...
       var board = game.board();
@@ -153,12 +153,25 @@
     });
 
     it.skip('should reset the board to original state',function(){
-      chai.expect(game.reset()).to.be.equal(initial()); // To compare the result of game.reset to the result of initial, which would prove it is working.
+      expect(game.reset()).to.be.equal(initial()); // To compare the result of game.reset to the result of initial, which would prove it is working.
     });
 
-    it.skip('should show result of final move when game.end is invoked', function(){
-      chai.expect(game.end()).to.be.equal(totalMoves.result);  //Really have no clue here.  Just taking a shot in the dark as it is currently 1:40am.  Will revisit when rested.
-      // TODO: Need to solve how to get the array representation when game.next is equal to the value of totalMoves and then assigned to game.end.
+    it('should show result of final move when game.end is invoked', function(){
+      // Pre conditions...
+      game.reset();
+      var board = game.board();
+      expect(board[6][3]).to.be.equal('p');
+      expect(board[4][3]).to.be.null;
+
+      // Action that changes the world...
+      game.end();
+
+      // Post conditions...
+      var board = game.board();
+      expect(board[5][5]).to.be.equal('n');
+      expect(board[7][6]).to.be.null;
+
+
     });
 
 })(window || module && module.exports || this);

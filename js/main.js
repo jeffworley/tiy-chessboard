@@ -43,12 +43,12 @@
     [1, 4, 2, 4],
     [6, 6, 5, 6],
     [1, 3, 3, 3],
+    [7, 5, 6, 6],
+    [0, 5, 1, 4],
+    [7, 6, 5, 5]
 
     // TODO: Fill me in!
   ]; // END moves
-
-  // Created var to cap number of moves
-  var totalMoves = 9;
 
   // Created var to keep track of moves
   var cmCounter = 0;
@@ -139,6 +139,12 @@
      */
     end: function(){
       // Write some code here...
+      do {
+        game.next();
+      } while (cmCounter < moves.length);
+
+      alert("That's all folks!!!");
+
       return this;
     },
     /**
