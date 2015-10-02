@@ -87,6 +87,8 @@
       // Super simple dummy test...
       //game.applyMove(6, 3, 4, 3);
 
+      // Set a condition to ensure that your counter doesn't exceed the length of the array.
+
       // Slightly smarter test with array of moves...
       var move = moves[cmCounter];
       console.log(move);
@@ -122,6 +124,8 @@
 
       // Super simple dummy test...
       //game.applyMove(2, 5, 0, 6);
+
+      // Set a condition to ensure that your counter doesn't exceed the length of the array.
 
       // Like next but in reverse...
       cmCounter = cmCounter - 1;
