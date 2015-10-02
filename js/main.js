@@ -128,11 +128,18 @@
      *
      * @todo Fill me in! ...and remove this comment.
      */
-    applyMove: function(from, to){
+    applyMove: function(fromRank, fromFile, toRank, toFile){
       // You should write something in here...
       // TODO: Apply the move 'from', 'to' to 'board'
-      board[4][3] = board[6][3];
-      board[6][3] = null;
+
+      // The hardcoded way...
+      //board[4][3] = board[6][3];
+      //board[6][3] = null;
+
+      // The slightly less hardcoded way...
+      board[toRank][toFile] = board[fromRank][fromFile];
+      board[fromRank][fromFile] = null;
+      console.log(game.tracer());
 
 
     } // END applyMove

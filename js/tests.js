@@ -29,8 +29,40 @@
       chai.expect(game.reset()).to.be.an('array');
     });
 
-    it.skip('should have the applyMove function', function(){
-      chai.expect(applyMove).to.be.a('function');
+    it('should have the applyMove function', function(){
+      //chai.expect(game.applyMove()).to.be.a('function');
+
+      // Pre conditions...
+      game.reset(); // Re-initialize the board
+      var board = game.board();
+      expect(board[6][3]).to.be.equal('p');
+      expect(board[4][3]).to.be.null;
+
+      // Action to change the world...
+      // game.applyMove(
+      //   {from: {rank: 6, file: 3},
+      //   to: {rank: 4, file: 3}
+      // });
+      game.applyMove(6, 3, 4, 3);
+
+      // Post conditions...
+      var board = game.board();
+      expect(board[6][3]).to.be.null;
+      expect(board[4][3]).to.be.equal('p');
+
+      game.reset(); // Re-initialize the board
+      var board = game.board();
+      expect(board[0][6]).to.be.equal('N');
+      expect(board[2][5]).to.be.null;
+
+      // Action to change the world...
+      game.applyMove(0, 6, 2, 5);
+
+      // Post consitions...
+      var board = game.board();
+      expect(board[0][6]).to.be.null;
+      expect(board[2][5]).to.be.equal('N');
+
     });
 
     it.skip('should tell me what piece is at a position', function(){
@@ -40,7 +72,7 @@
       expect(game.pieceAt(0,0)).to.equal('R');
     });
 
-    it('should move exactly one piece', function(){
+    it.skip('should move exactly one piece', function(){
 
       // Pre conditions...
       game.reset(); // Re-initialize the board
