@@ -36,14 +36,15 @@
       expect(game.pieceAt(0,0)).to.equal('R');
     });
 
-    it.skip('should move exactly one piece', function(){
+    it.skip('should have the applyMove function', function(){
+      //chai.expect(game.applyMove()).to.be.a('function');
 
+      // First applied move
       // Pre conditions...
       game.reset(); // Re-initialize the board
       var board = game.board();
       expect(board[6][3]).to.be.equal('p');
       expect(board[4][3]).to.be.null;
-
 
       function toTracer(rows){
         return rows.join('\n') + '\n';
@@ -60,38 +61,6 @@
         '|r|n|b|q|k|b|n|r|',
       ]));
 
-      // Notes to self for later...
-      // var secondMove = moves[1] = {
-      //   from: {rank: 0, file: 6},
-      //   to: {rank: 2, file: 5}
-      // }
-
-      // Action to change the world...
-      expect(game.applyMove(
-        // TODO: one day take {file: 'd', rank: 2 },
-        {from: {rank: 6, file: 3}, // from
-        // TODO: one day take {file: 'd', rank: 4 }
-        to: {rank: 4, file: 3}} // to
-      )).to.equal(undefined);
-
-
-      // Post conditions...
-      var board = game.board();
-
-      chai.expect(board[6][3]).to.be.equal(null); // we didn't actually move the piece in the actual code yet because applyMove is not filled out.
-      chai.expect(board[4][3]).to.be.equal('p'); // we didn't actually move the piece in the actual code yet because applyMove is not filled out.
-
-    });
-
-    it.skip('should have the applyMove function', function(){
-      //chai.expect(game.applyMove()).to.be.a('function');
-
-      // Pre conditions...
-      game.reset(); // Re-initialize the board
-      var board = game.board();
-      expect(board[6][3]).to.be.equal('p');
-      expect(board[4][3]).to.be.null;
-
       // Action to change the world...
       // game.applyMove(
       //   {from: {rank: 6, file: 3},
@@ -104,6 +73,8 @@
       expect(board[6][3]).to.be.null;
       expect(board[4][3]).to.be.equal('p');
 
+      //Second applied move
+      //Pre conditions...
       game.reset(); // Re-initialize the board
       var board = game.board();
       expect(board[0][6]).to.be.equal('N');
@@ -112,7 +83,7 @@
       // Action to change the world...
       game.applyMove(0, 6, 2, 5);
 
-      // Post consitions...
+      // Post conditions...
       var board = game.board();
       expect(board[0][6]).to.be.null;
       expect(board[2][5]).to.be.equal('N');
@@ -121,6 +92,7 @@
 
     it('should be able to advance to the next move', function(){
       // TODO: Maybe I should write some tests for this?
+      // First Move
       // Pre conditions...
       game.reset(); // Re-initialize the board
       var board = game.board();
@@ -134,11 +106,50 @@
       var board = game.board();
       expect(board[6][3]).to.be.null;
       expect(board[4][3]).to.be.equal('p');
+
+      // Second Move
+      // Pre conditions...
+      var board = game.board();
+      expect(board[0][6]).to.be.equal('N');
+      expect(board[2][5]).to.be.null;
+
+      // Action to change the world...
+      game.next();
+
+      // Post conditions...
+      var board = game.board();
+      expect(board[0][6]).to.be.null;
+      expect(board[2][5]).to.be.equal('N');
     });
 
-    it.skip('should be able to step back to the prev move', function(){
-      chai.expect(game.applyMove(Move[0])).to.be.equal({from: {to: 6, file: 3}, from: {rank: 4, file: 3}}); // To confirm that applyMove is correctly stepping back through the array of dictionaries.
-      // TODO: Logic seems right for stepping backwards but NEED to figure out how to do that with a sub-index variable.  Maybe --?
+    it('should be able to step back to the prev move', function(){
+      //Turn back second move...
+      // Pre conditions...
+      var board = game.board();
+      expect(board[0][6]).to.be.null;
+      expect(board[2][5]).to.be.equal('N');
+
+      // Actions to change the world...
+      game.prev();
+
+      // Post conditions...
+      var board = game.board();
+      expect(board[0][6]).to.be.equal('N');
+      expect(board[2][5]).to.be.null;
+
+      // Turn back first move...
+      // Pre conditions...
+      var board = game.board();
+      expect(board[6][3]).to.be.null;
+      expect(board[4][3]).to.be.equal('p');
+
+      // Actions to change the world...
+      game.prev();
+
+      // Post conditions...
+      var board = game.board();
+      expect(board[6][3]).to.be.equal('p');
+      expect(board[4][3]).to.be.null;
     });
 
     it.skip('should reset the board to original state',function(){
