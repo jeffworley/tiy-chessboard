@@ -88,29 +88,15 @@
       //game.applyMove(6, 3, 4, 3);
 
       // Set a condition to ensure that your counter doesn't exceed the length of the array.
-
+      if(cmCounter < moves.length) {
       // Slightly smarter test with array of moves...
-      var move = moves[cmCounter];
-      console.log(move);
-      game.applyMove(move[0], move[1], move[2], move[3]);
-      cmCounter = cmCounter + 1;
-
-
-      // End goal test with json of moves...
-      // $.each(moves, function(key, value) {
-      //   console.log(key + "=" + value);
-      //   $.each(key, function(key, value) {
-      //     console.log (key + "=" + value);
-      //   });
-      // });
-
-      // For when we need to keep track of moves...
-      // if (cmCounter < totalMoves) {
-      //   cmCounter = cmCounter + 1;
-      // } else {
-      //   alert("Sorry, that is the end of the opening!!!");
-      // }
-
+        var move = moves[cmCounter];
+        console.log(move);
+        game.applyMove(move[0], move[1], move[2], move[3]);
+        cmCounter = cmCounter + 1;
+      } else {
+        alert("Sorry, that is the end of the Catalan Opening: Closed Variation");
+      };
       return this;
     },
     /**
@@ -126,13 +112,15 @@
       //game.applyMove(2, 5, 0, 6);
 
       // Set a condition to ensure that your counter doesn't exceed the length of the array.
-
+      if(cmCounter > 0) {
       // Like next but in reverse...
-      cmCounter = cmCounter - 1;
-      var move = moves[cmCounter];
-      console.log(move);
-      game.applyMove(move[2], move[3], move[0], move[1]);
-
+        cmCounter = cmCounter - 1;
+        var move = moves[cmCounter];
+        console.log(move);
+        game.applyMove(move[2], move[3], move[0], move[1]);
+      } else {
+        alert("You are at already at the beginning board state!!!");
+      };
       return this;
     },
     /**
@@ -146,8 +134,6 @@
       do {
         game.next();
       } while (cmCounter < moves.length);
-
-      //alert("That's all folks!!!");
 
       return this;
     },
