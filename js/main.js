@@ -1,4 +1,3 @@
-console.log("Loaded main.js");
 (function(globals){
 // Don't worry if that seems a little funky...
 
@@ -20,22 +19,41 @@ console.log("Loaded main.js");
    * @var {Array} of...?
    */
   var moves = [
-    [g4, e4],
-    [a7, c6],
-    [g3, e3],
-    [b5, c5],
-    [g7, f7],
-    [b4, d4],
-    [h6, g7],
-    [a6, b5],
-    [h7, f6]
+    // {from: {rank: 6, file: 3},
+    // to: {rank: 4, file: 3}},
+    // {from: {rank: 0, file: 6},
+    // to: {rank: 2, file: 5}},
+    // {from: {rank: 6, file: 2},
+    // to: {rank: 4, file: 2}},
+    // {from: {rank: 1, file: 4},
+    // to: {rank: 2, file: 4}},
+    // {from: {rank: 6, file: 6},
+    // to: {rank: 5, file: 6}},
+    // {from: {rank: 1, file: 3},
+    // to: {rank: 3, file: 3}},
+    // {from: {rank: 7, file: 5},
+    // to: {rank: 6, file: 6}},
+    // {from: {rank: 0, file: 5},
+    // to: {rank: 1, file: 4}},
+    // {from: {rank: 7, file: 6},
+    // to: {rank: 5, file: 5}}
+    [6, 3, 4, 3],
+    [0, 6, 2, 5],
+    [6, 2, 4, 2],
+    [1, 4, 2, 4],
+    [6, 6, 5, 6],
+    [1, 3, 3, 3],
+    [7, 5, 6, 6],
+    [0, 5, 1, 4],
+    [7, 6, 5, 5]
+
     // TODO: Fill me in!
   ]; // END moves
 
   // Created var to keep track of moves
   var cmCounter = 0;
   // var current; TODO: do we need this?
-  var catalanMove = [];
+
   // You don't need to understand `globals` yet...
   var game = globals.game = {
     /**
@@ -55,8 +73,8 @@ console.log("Loaded main.js");
      */
     reset: function(){
       board = initial();
-
-      return this;
+      cmCounter = 0;
+      return this; // "this" in the context of a function, refers to the object to which the function belongs.  In this case "this" refers to the object which reset belongs and it belongs to the game object.
     },
     /**
      * Advance the internal game board to the next move.
@@ -66,14 +84,32 @@ console.log("Loaded main.js");
      */
     next: function(){
       // Doesn't this seem to be missing something?
-      if (cmCounter > moves.length) {
-        console.log("No more moves in the Catalan Opening: Closed Variation!");
-      } else if (cmCounter < moves.length) {
-        cmCounter = cmCounter + 1;
-        
-      }
+      // Super simple dummy test...
+      //game.applyMove(6, 3, 4, 3);
+
+      // Set a condition to ensure that your counter doesn't exceed the length of the array.
+
+      // Slightly smarter test with array of moves...
+      var move = moves[cmCounter];
+      console.log(move);
+      game.applyMove(move[0], move[1], move[2], move[3]);
+      cmCounter = cmCounter + 1;
 
 
+      // End goal test with json of moves...
+      // $.each(moves, function(key, value) {
+      //   console.log(key + "=" + value);
+      //   $.each(key, function(key, value) {
+      //     console.log (key + "=" + value);
+      //   });
+      // });
+
+      // For when we need to keep track of moves...
+      // if (cmCounter < totalMoves) {
+      //   cmCounter = cmCounter + 1;
+      // } else {
+      //   alert("Sorry, that is the end of the opening!!!");
+      // }
 
       return this;
     },
@@ -85,6 +121,18 @@ console.log("Loaded main.js");
      */
     prev: function(){
       // Another good place for code...
+
+      // Super simple dummy test...
+      //game.applyMove(2, 5, 0, 6);
+
+      // Set a condition to ensure that your counter doesn't exceed the length of the array.
+
+      // Like next but in reverse...
+      cmCounter = cmCounter - 1;
+      var move = moves[cmCounter];
+      console.log(move);
+      game.applyMove(move[2], move[3], move[0], move[1]);
+
       return this;
     },
     /**
@@ -95,6 +143,12 @@ console.log("Loaded main.js");
      */
     end: function(){
       // Write some code here...
+      do {
+        game.next();
+      } while (cmCounter < moves.length);
+
+      //alert("That's all folks!!!");
+
       return this;
     },
     /**
@@ -109,7 +163,7 @@ console.log("Loaded main.js");
       for ( var rank = 0; rank < board.length; rank++ ){
         bullet += '|';
         for ( var file = 0; file < board[rank].length; file++ ){
-          bullet += board[rank][file] || ' |';
+          bullet += (board[rank][file] || ' ') + '|';
         }
         bullet += '\n';
       }
@@ -126,8 +180,20 @@ console.log("Loaded main.js");
      *
      * @todo Fill me in! ...and remove this comment.
      */
-    function applyMove(from, to){
+    applyMove: function(fromRank, fromFile, toRank, toFile){
       // You should write something in here...
+      // TODO: Apply the move 'from', 'to' to 'board'
+
+      // The hardcoded way...
+      //board[4][3] = board[6][3];
+      //board[6][3] = null;
+
+      // The slightly less hardcoded way...
+      board[toRank][toFile] = board[fromRank][fromFile];
+      board[fromRank][fromFile] = null;
+      console.log(game.tracer());
+
+
     } // END applyMove
   }; // END game
 

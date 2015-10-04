@@ -2,11 +2,12 @@
   "name": "tiy-chessboard",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "test": "mocha",
-    "bs" : "browser-sync start --server --directory --files='*.html, js/*.js, css/*.css'",
-    "sass" : "node-sass --output-style expanded scss/main.scss css/main.css"
+    "test": "browser-sync start --server --startPath tests.html --files='js/*.js'",
+    "start": "browser-sync start --server --startPath='cb-index.html' --files='cb-index.html, css/*.css, js/*.js'",
+    "sass": "node-sass --output css/ scss/main.scss",
+    "sass:watch": "npm run sass -- --watch"
   },
   "repository": {
     "type": "git",

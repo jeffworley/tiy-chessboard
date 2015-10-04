@@ -20,9 +20,6 @@ console.log("Loaded controllers.js");
     // Maybe do something with EVENT...?
   }*/
 
-  var cmCounter = 0;
-  var totalBoardStates = 9;
-
 
   // Controller for "next move"...
   jQuery("#step-forward").on('click', function(event){
@@ -31,16 +28,7 @@ console.log("Loaded controllers.js");
     // TODO: Tell the Model -- `game` -- to advance to the next move...
     //game.next();
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
-    var curID = "#boardState-" + cmCounter;
-    var nextID = curID;
 
-    if (cmCounter < totalBoardStates) {
-      cmCounter = cmCounter + 1;
-      nextID = "#boardState-" + cmCounter;
-
-      $(curID).addClass("notCurMove");
-      $(nextID).removeClass("notCurMove");
-    }
 
   });
 
@@ -52,16 +40,6 @@ console.log("Loaded controllers.js");
     //game.prev();
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
 
-    var curID = "#boardState-" + cmCounter;
-    var prevID = curID;
-
-    if (cmCounter > 0) {
-      cmCounter = cmCounter - 1;
-      prevID = "#boardState-" + cmCounter;
-
-      $(curID).addClass("notCurMove");
-      $(prevID).removeClass("notCurMove");
-    }
 
   });
 
@@ -73,16 +51,6 @@ console.log("Loaded controllers.js");
     //game.end();
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
 
-    $("#boardState-0").addClass("notCurMove");
-    $("#boardState-1").addClass("notCurMove");
-    $("#boardState-2").addClass("notCurMove");
-    $("#boardState-3").addClass("notCurMove");
-    $("#boardState-4").addClass("notCurMove");
-    $("#boardState-5").addClass("notCurMove");
-    $("#boardState-6").addClass("notCurMove");
-    $("#boardState-7").addClass("notCurMove");
-    $("#boardState-8").addClass("notCurMove");
-    $("#boardState-9").removeClass("notCurMove");
 
   });
 
@@ -94,16 +62,6 @@ console.log("Loaded controllers.js");
     //game.reset();
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
 
-    $("#boardState-0").removeClass("notCurMove");
-    $("#boardState-1").addClass("notCurMove");
-    $("#boardState-2").addClass("notCurMove");
-    $("#boardState-3").addClass("notCurMove");
-    $("#boardState-4").addClass("notCurMove");
-    $("#boardState-5").addClass("notCurMove");
-    $("#boardState-6").addClass("notCurMove");
-    $("#boardState-7").addClass("notCurMove");
-    $("#boardState-8").addClass("notCurMove");
-    $("#boardState-9").addClass("notCurMove");
 
   });
 
