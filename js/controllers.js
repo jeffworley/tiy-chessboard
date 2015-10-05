@@ -72,5 +72,17 @@ console.log("Loaded controllers.js");
 
   });
 
+  // Controller for play/pause ...
+  jQuery("#play-pause").on('click', function(event){
+    // Nested function for when opening is in a playing state...
+    var game = globals.game;
+    function playing() {
+      game.next();
+      view.current();
+    };
+    // Set interval for game.next calls...
+    var interval = setInterval(playing, 1500);
+  });
+
 // Am I supposed to recognize this?
 })(window || module && module.exports || this);

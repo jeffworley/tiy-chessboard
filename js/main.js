@@ -148,6 +148,7 @@ console.log("Loaded main.js");
 
       return this;
     },
+
     /**
      * Provide a printable representation of the game board for use as a tracer
      *
