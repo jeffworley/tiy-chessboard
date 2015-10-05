@@ -99,7 +99,7 @@
       expect(board[6][3]).to.be.equal('p');
       expect(board[4][3]).to.be.null;
 
-      // Action to change the world...
+      // Action to change the world...2
       game.next();
 
       // Post conditions...
