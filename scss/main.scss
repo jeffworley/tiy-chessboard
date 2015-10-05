@@ -108,7 +108,8 @@ textarea {
     }
 
     tbody td {
-      border: 1px solid darkgray;
+      border: 1px solid black;
+      background-color: darkgray;
     }
 
     tbody tr:nth-child(even) td:nth-child(even) {
@@ -155,6 +156,62 @@ textarea {
  *   left: 0;
  * }
  */
+
+ // Set the size and position of the pieces...
+ ::before {
+   position: absolute;
+   font-size: 7vw;
+ }
+
+ // Let's refactor even further and just assign the pieces to the visual representation of the board by their class names...
+ // Chess piece unicode sourced from http://www.alt-codes.net/chess-symbols.php
+ // And converted them to CSS Hex with http://www.evotech.net/articles/testjsentities.html
+ .P::before {
+   content: "\265F";
+ }
+
+ .R::before {
+   content: "\265C";
+ }
+
+ .N::before {
+   content: "\265E";
+ }
+
+ .B::before {
+   content: "\265D";
+ }
+
+ .Q::before {
+   content: "\265B";
+ }
+ .K::before {
+   content: "\265A";
+ }
+
+ .p::before {
+   content: "\2659";
+ }
+
+ .r::before {
+   content: "\2656";
+ }
+
+ .n::before {
+   content: "\2658";
+ }
+
+ .b::before {
+   content: "\2657";
+ }
+
+ .q::before {
+   content: "\2655";
+ }
+
+ .k::before {
+   content: "\2654";
+ }
 
 /* ==========================================================================
    Helper classes

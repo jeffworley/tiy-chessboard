@@ -25,18 +25,18 @@
 
     }); // END it should be a big Array
 
-    it.skip('should tell us what game.reset returns', function(){
+    it('should tell us what game.reset returns', function(){
       chai.expect(game.reset()).to.be.an('array');
     });
 
-    it.skip('should tell me what piece is at a position', function(){
+    it('should tell me what piece is at a position', function(){
       expect(game.pieceAt(6,3)).to.equal('p');
       expect(game.pieceAt(6,2)).to.equal('p');
       expect(game.pieceAt(4,3)).to.be.null;
       expect(game.pieceAt(0,0)).to.equal('R');
     });
 
-    it.skip('should have the applyMove function', function(){
+    it('should have the applyMove function', function(){
       //chai.expect(game.applyMove()).to.be.a('function');
 
       // First applied move
@@ -90,7 +90,7 @@
 
     });
 
-    it.skip('should be able to advance to the next move', function(){
+    it('should be able to advance to the next move', function(){
       // TODO: Maybe I should write some tests for this?
       // First Move
       // Pre conditions...
@@ -99,7 +99,7 @@
       expect(board[6][3]).to.be.equal('p');
       expect(board[4][3]).to.be.null;
 
-      // Action to change the world...
+      // Action to change the world...2
       game.next();
 
       // Post conditions...
@@ -122,7 +122,7 @@
       expect(board[2][5]).to.be.equal('N');
     });
 
-    it.skip('should be able to step back to the prev move', function(){
+    it('should be able to step back to the prev move', function(){
       //Turn back second move...
       // Pre conditions...
       var board = game.board();
@@ -152,7 +152,7 @@
       expect(board[4][3]).to.be.null;
     });
 
-    it.skip('should reset the board to original state',function(){
+    it('should reset the board to original state',function(){
       expect(game.reset()).to.be.equal(initial()); // To compare the result of game.reset to the result of initial, which would prove it is working.
     });
 

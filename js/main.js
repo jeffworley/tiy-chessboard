@@ -1,3 +1,4 @@
+console.log("Loaded main.js");
 (function(globals){
 // Don't worry if that seems a little funky...
 
@@ -19,33 +20,37 @@
    * @var {Array} of...?
    */
   var moves = [
-    // {from: {rank: 6, file: 3},
-    // to: {rank: 4, file: 3}},
-    // {from: {rank: 0, file: 6},
-    // to: {rank: 2, file: 5}},
-    // {from: {rank: 6, file: 2},
-    // to: {rank: 4, file: 2}},
-    // {from: {rank: 1, file: 4},
-    // to: {rank: 2, file: 4}},
-    // {from: {rank: 6, file: 6},
-    // to: {rank: 5, file: 6}},
-    // {from: {rank: 1, file: 3},
-    // to: {rank: 3, file: 3}},
-    // {from: {rank: 7, file: 5},
-    // to: {rank: 6, file: 6}},
-    // {from: {rank: 0, file: 5},
-    // to: {rank: 1, file: 4}},
-    // {from: {rank: 7, file: 6},
-    // to: {rank: 5, file: 5}}
-    [6, 3, 4, 3],
-    [0, 6, 2, 5],
-    [6, 2, 4, 2],
-    [1, 4, 2, 4],
-    [6, 6, 5, 6],
-    [1, 3, 3, 3],
-    [7, 5, 6, 6],
-    [0, 5, 1, 4],
-    [7, 6, 5, 5]
+
+    // Refactored way of moving pieces on the board...
+    {from: {rank: 6, file: 3},
+    to: {rank: 4, file: 3}},
+    {from: {rank: 0, file: 6},
+    to: {rank: 2, file: 5}},
+    {from: {rank: 6, file: 2},
+    to: {rank: 4, file: 2}},
+    {from: {rank: 1, file: 4},
+    to: {rank: 2, file: 4}},
+    {from: {rank: 6, file: 6},
+    to: {rank: 5, file: 6}},
+    {from: {rank: 1, file: 3},
+    to: {rank: 3, file: 3}},
+    {from: {rank: 7, file: 5},
+    to: {rank: 6, file: 6}},
+    {from: {rank: 0, file: 5},
+    to: {rank: 1, file: 4}},
+    {from: {rank: 7, file: 6},
+    to: {rank: 5, file: 5}}
+
+    // Original way of moving the pieces on the board...
+    // [6, 3, 4, 3],
+    // [0, 6, 2, 5],
+    // [6, 2, 4, 2],
+    // [1, 4, 2, 4],
+    // [6, 6, 5, 6],
+    // [1, 3, 3, 3],
+    // [7, 5, 6, 6],
+    // [0, 5, 1, 4],
+    // [7, 6, 5, 5]
 
     // TODO: Fill me in!
   ]; // END moves
@@ -88,29 +93,18 @@
       //game.applyMove(6, 3, 4, 3);
 
       // Set a condition to ensure that your counter doesn't exceed the length of the array.
-
+      if(cmCounter < moves.length) {
       // Slightly smarter test with array of moves...
-      var move = moves[cmCounter];
-      console.log(move);
-      game.applyMove(move[0], move[1], move[2], move[3]);
-      cmCounter = cmCounter + 1;
+        var move = moves[cmCounter];
+        console.log(move);
+        // Refactored way of performing next move...
+        game.applyMove(move.from.rank, move.from.file, move.to.rank, move.to.file);
 
+        // Original way of performing next move...
+        //game.applyMove(move[0], move[1], move[2], move[3]);
 
-      // End goal test with json of moves...
-      // $.each(moves, function(key, value) {
-      //   console.log(key + "=" + value);
-      //   $.each(key, function(key, value) {
-      //     console.log (key + "=" + value);
-      //   });
-      // });
-
-      // For when we need to keep track of moves...
-      // if (cmCounter < totalMoves) {
-      //   cmCounter = cmCounter + 1;
-      // } else {
-      //   alert("Sorry, that is the end of the opening!!!");
-      // }
-
+        cmCounter = cmCounter + 1;
+      };
       return this;
     },
     /**
@@ -126,13 +120,18 @@
       //game.applyMove(2, 5, 0, 6);
 
       // Set a condition to ensure that your counter doesn't exceed the length of the array.
-
+      if(cmCounter > 0) {
       // Like next but in reverse...
-      cmCounter = cmCounter - 1;
-      var move = moves[cmCounter];
-      console.log(move);
-      game.applyMove(move[2], move[3], move[0], move[1]);
+        cmCounter = cmCounter - 1;
+        var move = moves[cmCounter];
+        console.log(move);
+        // Refactored way of performing prev move...
+        game.applyMove(move.to.rank, move.to.file, move.from.rank, move.from.file);
 
+        // Original way of performing prev move...
+        //game.applyMove(move[2], move[3], move[0], move[1]);
+
+      };
       return this;
     },
     /**
@@ -147,10 +146,16 @@
         game.next();
       } while (cmCounter < moves.length);
 
-      //alert("That's all folks!!!");
-
       return this;
     },
+
+    play: function() {
+      // Determine amount of moves so we can clearInterval at correct time...
+      var movesLeft = moves.length - cmCounter;
+      
+      return this;
+    },
+
     /**
      * Provide a printable representation of the game board for use as a tracer
      *
