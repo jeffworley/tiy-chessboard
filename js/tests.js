@@ -156,7 +156,7 @@
       expect(game.reset()).to.be.equal(initial()); // To compare the result of game.reset to the result of initial, which would prove it is working.
     });
 
-    it('should show result of final move when game.end is invoked', function(){
+    it.skip('should show result of final move when game.end is invoked', function(){
       // Pre conditions...
       game.reset();
       var board = game.board();
