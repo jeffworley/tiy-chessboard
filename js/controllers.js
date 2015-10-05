@@ -75,7 +75,6 @@ console.log("Loaded controllers.js");
   // Controller for play/pause ...
   jQuery("#play-pause").on('click', function(event){
     // Nested function for when opening is in a playing state...
-    var game = globals.game;
     function playing() {
       game.next();
       view.current();

@@ -149,6 +149,13 @@ console.log("Loaded main.js");
       return this;
     },
 
+    play: function() {
+      // Determine amount of moves so we can clearInterval at correct time...
+      var movesLeft = moves.length - cmCounter;
+      
+      return this;
+    },
+
     /**
      * Provide a printable representation of the game board for use as a tracer
      *
